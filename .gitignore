@@ -3,3 +3,6 @@
 *.class
 .idea/
 .gitignore
+/Netbeans/IntroduccionJava/build/classes
+*.mf
+*.properties
