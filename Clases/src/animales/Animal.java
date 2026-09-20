@@ -1,0 +1,37 @@
+package animales;
+
+public class Animal {
+    protected void hacerSonido() {
+        System.out.println("El animal hace un sonido");
+    }
+}
+
+class Perro extends Animal {
+    @Override
+    protected void hacerSonido() {
+        System.out.println("El perro hace guau");
+    }
+}
+
+class Gato extends Animal {
+    @Override
+    protected void hacerSonido() {
+        System.out.println("El gato hace miau!");
+    }
+}
+
+class PruebaAnimal {
+
+    // Metodo de la clase Padre (Animal)
+    static void imprimirSonido(Animal animal) {
+        animal.hacerSonido();
+    }
+
+    static void main(String[] args) {
+        // Objeto de la clase Padre (Animal)
+        // var animal = new Animal();
+        // var animal = new Perro();
+        var animal = new Gato();
+        imprimirSonido(animal);
+    }
+}

@@ -1,23 +1,32 @@
 package persona;
 
 public class Persona {
+    private static int contadorPersonas = 0;
+    private int idPersona;
     private String nombre;
     private String apellido;
     private int edad;
     private int celular;
 
-    public Persona() {}
+    public Persona() {
+        this.idPersona = ++Persona.contadorPersonas;
+    }
 
     public Persona(String nombre, String apellido, int edad, int celular) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
         this.celular = celular;
+        this.idPersona = ++Persona.contadorPersonas;
     }
 
-    void mostrarPersona() {
-        System.out.println("Nombre: " + this.nombre);
-        System.out.println("Apellido: " + this.apellido);
+    @Override
+    public String toString() {
+        return "Id: " + this.idPersona + ", Nombre: " +this.nombre + ", Apellido: " + this.apellido + ", Dir. Mem. " + super.toString();
+    }
+
+    public int getIdPersona() {
+        return this.idPersona;
     }
 
     public String getNombre() {
@@ -50,5 +59,9 @@ public class Persona {
 
     public void setCelular(int celular) {
         this.celular = celular;
+    }
+
+    public static int getContadorPersonas() {
+        return Persona.contadorPersonas;
     }
 }
